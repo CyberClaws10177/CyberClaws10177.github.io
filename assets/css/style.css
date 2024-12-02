@@ -1,161 +1,125 @@
-/* Main CSS File: style.css */
-
-    body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #041e42;
-    color: #F2A900;
-    height: 100%; /* Allow body to extend vertically */
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    }
-  
-  header {
-    background: #E4002B;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  header h1 {
-    font-size: 1.8rem;
-    margin: 0;
-  }
-  
-  header nav a {
-    margin: 0 1rem;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  header nav a:hover {
-    color: #F2A900;
-  }
-
-  .container {
-    padding: 2rem;
-  }
-  
-  .hero {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide parts of the video that are outside the section */
-  }
-
-  .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the video covers the section without stretching */
-    z-index: -1; /* Keep the video behind other content */
-  }
-  
-  .hero-content {
-    position: absolute; /* Position content relative to the hero section */
-    top: 50%; /* Vertically center */
-    left: 50%; /* Horizontally center */
-    transform: translate(-50%, -50%); /* Adjust positioning to truly center the content */
-    text-align: center; /* Ensure text is centered */
-    color: white; /* Adjust text color for visibility */
-    z-index: 1; /* Ensure content is on top of the video */
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-  }
-  
-  .button {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    color: #FFFFFF;
-    background: #F2A900;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 1rem; /* Space between the text and button */
-    text-align: center;
-  }
-  
-  .button:hover {
-    background: #F2A900;
-  }
-  
-  /* Card Layout for Outreach and Mentoring Pages */
-  .card {
-    background: #041E42;
-    border: 1px solid #FFFFFF;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-  }
-  
-  .card h3 {
-    color: #F2A900;
-  }
-  
-  .card p {
-    color: #FFFFFF;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background: #041E42;
-    color: #FFFFFF;
-    font-size: 0.9rem;
-  }
+/* Body Styling */
 body {
-    font-family: Inter, sans-serif;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #041e42; /* Default background color for the body */
+  color: #F2A900;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures the body takes the full height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  min-height: 100vh; /* Ensures the body always takes at least full height of the screen */
+  margin: 0; /* Remove any default margins */
+  border: none; /* Ensures no border or frame */
 }
+
+/* Header Styling */
 header {
-    background-color: #041E42;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 20px;
+  background: #041e42;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+
+header h1 {
+  font-size: 1.8rem;
+  margin: 0;
 }
-.sponsor-div {
-    width: 280px;
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
+
+header nav a {
+  margin: 0 1rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
 }
-.sponsor-div h2 {
-    margin-bottom: 20px;
+
+header nav a:hover {
+  color: #F2A900;
 }
-.sponsor-space {
-    height: 200px;
-    background-color: #e0e0e0;
-    border: 1px dashed #ccc;
-    margin-bottom: 20px;
+
+/* Flexbox for the hero overlay with video */
+.hero-overlay {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Set the video height to 80% of the screen */
+  width: 100%;
 }
+
+/* Dark overlay on top of the video */
+.hero-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+  z-index: 1; /* Places the overlay on top of the video */
+}
+
+.hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Puts the video in the background */
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure video fills the container */
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2; /* Ensures content is on top of the overlay */
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  color: #FFFFFF;
+  background: #F2A900;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.button:hover {
+  background: #041E42;
+}
+
+/* Content Section below the hero */
+.container2 {
+  padding: 2rem;
+  color: #041e42;
+  background-color: #ffffff;
+  text-align: center;
+}
+
 footer {
-    background-color: #041E42;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  text-align: center;
+  padding: 1rem;
+  background: #041E42;
+  color: #FFFFFF;
+  font-size: 0.9rem;
 }
