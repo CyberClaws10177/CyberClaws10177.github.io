@@ -1,10 +1,13 @@
 /* Main CSS File: style.css */
-body {
+
+    body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #041e42;
     color: #F2A900;
-  }
+    height: 100%; /* Allow body to extend vertically */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    }
   
   header {
     background: #E4002B;
@@ -35,12 +38,32 @@ body {
   }
   
   .hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(360deg, #F2A900, #041E42);
-    color: #FFFFFF;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide parts of the video that are outside the section */
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the section without stretching */
+    z-index: -1; /* Keep the video behind other content */
   }
   
+  .hero-content {
+    position: absolute; /* Position content relative to the hero section */
+    top: 50%; /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Adjust positioning to truly center the content */
+    text-align: center; /* Ensure text is centered */
+    color: white; /* Adjust text color for visibility */
+    z-index: 1; /* Ensure content is on top of the video */
+  }
+
   .hero h1 {
     font-size: 3rem;
   }
@@ -58,11 +81,12 @@ body {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    margin-top: 1rem;
+    margin-top: 1rem; /* Space between the text and button */
+    text-align: center;
   }
   
   .button:hover {
-    background: #041E42;
+    background: #F2A900;
   }
   
   /* Card Layout for Outreach and Mentoring Pages */
