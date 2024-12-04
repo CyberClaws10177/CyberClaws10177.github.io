@@ -15,15 +15,31 @@ body {
 /* Header Styling */
 header {
   background: #041e42;
-  padding: 1rem 2rem;
+  padding: 0 2rem; /* Remove vertical padding to keep height constant */
+  height: 7rem; /* Set a fixed height for the header */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Keeps space between h1 and navigation */
+  align-items: center; /* Vertically center the h1 */
 }
 
 header h1 {
-  font-size: 1.8rem;
-  margin: 0;
+  font-size: 1.8rem;  /* Adjust font size to make it larger */
+  margin: 0; /* Removes default margin */
+  margin-top: 1rem;
+  text-align: left; /* Ensures the h1 stays aligned to the left */
+}
+
+header .logo {
+  width: 12rem; /* Adjust logo size */
+  height: auto;
+  margin-right: 1rem; /* Space between logo and title */
+  margin-top: 1rem;
+}
+
+.divider {
+  height: 4px;
+  background-color: #FFFFFF;
+  margin-top: 20px; /* Adds space above the divider */
 }
 
 header nav a {
@@ -43,7 +59,7 @@ header nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh; /* Set the video height to 80% of the screen */
+  height: 85vh; /* Set the video height to 80% of the screen */
   width: 100%;
 }
 
@@ -78,19 +94,10 @@ header nav a:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Keeps the content centered */
   text-align: center;
   color: white;
   z-index: 2; /* Ensures content is on top of the overlay */
-}
-
-.hero h1 {
-  font-size: 3rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin: 1rem 0;
 }
 
 .button {
