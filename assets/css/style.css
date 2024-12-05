@@ -30,7 +30,7 @@ header h1 {
 }
 
 header .logo {
-  width: 12rem; /* Adjust logo size */
+  width: 12.5rem; /* Adjust logo size */
   height: auto;
   margin-right: 1rem; /* Space between logo and title */
   margin-top: 1rem;
@@ -53,13 +53,33 @@ header nav a:hover {
   color: #F2A900;
 }
 
+/* New Section for the Images Below the Header */
+.image-section {
+  display: flex; /* Aligns images horizontally */
+  justify-content: center; /* Centers the images */
+  align-items: center; /* Centers the images vertically */
+  width: 100%; /* Ensures the section takes up the full screen width */
+  padding: 0; /* Removes the padding for a full-width look */
+  background-color: #f9f9f9; /* Light background color for the image section */
+}
+
+.image-container {
+  width: 50%; /* Each image container takes up 50% of the width */
+}
+
+.side-by-side-image {
+  width: 100%; /* Ensures the image stretches to fill its container */
+  height: auto; /* Maintains the aspect ratio */
+  /* Removed border-radius and box-shadow */
+}
+
 /* Flexbox for the hero overlay with video */
 .hero-overlay {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 85vh; /* Set the video height to 80% of the screen */
+  height: 80vh; /* Set the video height to 80% of the screen */
   width: 100%;
 }
 
