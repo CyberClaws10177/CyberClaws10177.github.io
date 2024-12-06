@@ -55,12 +55,11 @@ header nav a:hover {
 
 /* New Section for the Images Below the Header */
 .image-section {
-  display: flex; /* Aligns images horizontally */
-  justify-content: center; /* Centers the images */
-  align-items: center; /* Centers the images vertically */
-  width: 100%; /* Ensures the section takes up the full screen width */
-  padding: 0; /* Removes the padding for a full-width look */
-  background-color: #f9f9f9; /* Light background color for the image section */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Space between header and image section */
+  background-color: #FFFFFF;
+  padding-top: 4px;
 }
 
 .image-container {
@@ -70,7 +69,7 @@ header nav a:hover {
 .side-by-side-image {
   width: 100%; /* Ensures the image stretches to fill its container */
   height: auto; /* Maintains the aspect ratio */
-  /* Removed border-radius and box-shadow */
+  display: block;/* Removed border-radius and box-shadow */
 }
 
 /* Flexbox for the hero overlay with video */
