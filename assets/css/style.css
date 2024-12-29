@@ -15,38 +15,36 @@ body {
 /* Header Styling */
 header {
   background: #041e42;
-  padding: 0 2rem; /* Remove vertical padding to keep height constant */
-  height: 7rem; /* Set a fixed height for the header */
+  padding: 0 2rem; /* Padding for spacing inside header */
+  height: 7rem; /* Fixed height for the header */
   display: flex;
-  justify-content: space-between; /* Keeps space between h1 and navigation */
-  align-items: center; /* Vertically center the h1 */
-}
-
-header h1 {
-  font-size: 1.8rem;  /* Adjust font size to make it larger */
-  margin: 0; /* Removes default margin */
-  margin-top: 1rem;
-  text-align: left; /* Ensures the h1 stays aligned to the left */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  gap: 2rem; /* Space between elements */
 }
 
 header .logo {
-  width: 12.5rem; /* Adjust logo size */
+  width: 10rem; /* Adjust logo size */
   height: auto;
-  margin-right: 1rem; /* Space between logo and title */
-  margin-top: 1rem;
 }
 
 .divider {
   height: 4px;
-  background-color: #FFFFFF;
-  margin-top: 20px; /* Adds space above the divider */
+  background-color: #F2A900;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem; /* Equal spacing between navigation links */
+  position: relative; /* Add relative positioning to adjust vertical alignment */
 }
 
 header nav a {
-  margin: 0 1rem;
   color: #FFFFFF;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 1.5625rem; /* Adjusted font size to be a quarter of the logo size */
+  position: relative;
+  top: 1px; /* Adjusts the text position by 1px downwards */
 }
 
 header nav a:hover {
@@ -119,19 +117,27 @@ header nav a:hover {
   z-index: 2; /* Ensures content is on top of the overlay */
 }
 
+.hero-content h1{
+  font-size: 64px;
+}
+
+.hero-content p{
+  font-size: 32px;
+}
+
 .button {
   display: inline-block;
   padding: 0.8rem 2rem;
   color: #FFFFFF;
   background: #F2A900;
   text-decoration: none;
-  font-weight: bold;
   border-radius: 5px;
   margin-top: 1rem;
+  transition: filter 1.0s ease; /* Smooth fade effect for background color */
 }
 
 .button:hover {
-  background: #041E42;
+  filter: brightness(75%); /* Darkens the button to 85% of its original brightness */
 }
 
 /* Content Section below the hero */
@@ -140,6 +146,10 @@ header nav a:hover {
   color: #041e42;
   background-color: #ffffff;
   text-align: center;
+}
+
+.hero-content h2{
+  font-size: 32px;
 }
 
 footer {
