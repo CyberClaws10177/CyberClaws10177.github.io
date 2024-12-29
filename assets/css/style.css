@@ -88,7 +88,7 @@ header nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+  background-color: rgba(0, 0, 0, 0.65); /* Black with 50% transparency */
   z-index: 1; /* Places the overlay on top of the video */
 }
 
@@ -110,19 +110,19 @@ header nav a:hover {
 .hero-content {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Keeps the content centered */
+  left: 25%;
+  transform: translate(-11.5%, -50%); /* Keeps the content centered */
   text-align: center;
   color: white;
   z-index: 2; /* Ensures content is on top of the overlay */
 }
 
 .hero-content h1{
-  font-size: 64px;
+  font-size: 48px;
 }
 
 .hero-content p{
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .button {
@@ -133,11 +133,11 @@ header nav a:hover {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 1rem;
-  transition: filter 1.0s ease; /* Smooth fade effect for background color */
+  transition: filter 0.3s ease; /* Smooth fade effect for background color */
 }
 
 .button:hover {
-  filter: brightness(75%); /* Darkens the button to 85% of its original brightness */
+  filter: brightness(50%); /* Darkens the button to 85% of its original brightness */
 }
 
 /* Content Section below the hero */
@@ -158,4 +158,69 @@ footer {
   background: #041E42;
   color: #FFFFFF;
   font-size: 0.9rem;
+}
+
+.robot-section {
+  text-align: center;
+  padding: 2rem;
+  background-color: #ffffff; /* Optional background */
+  color: #450000; /* Matching text color */
+}
+
+.robot-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid #450000; /* Creates the underline effect */
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.robot-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.robot-button {
+  padding: 0.75rem 1.5rem;
+  color: #ffffff;
+  background-color: #450000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.robot-button:hover {
+  background-color: #611919; /* Darker shade on hover */
+}
+
+.robot-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.robot-image {
+  width: 50%; /* Adjust the size of the image */
+  max-width: 600px;
+  height: auto;
+}
+
+.robot-features {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.robot-features li {
+  margin-bottom: 0.5rem;
+}
+
+.hero-content .subtext {
+  font-size: 24px;
+  font-weight: lighter;
 }
