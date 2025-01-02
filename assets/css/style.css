@@ -1,7 +1,7 @@
 /* Body Styling */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #041e42; /* Default background color for the body */
+  background-color: #FFFFFF; /* Default background color for the body */
   color: #F2A900;
   display: flex;
   flex-direction: column;
@@ -61,8 +61,6 @@ header nav a:hover {
   gap: 1rem; /* Fixed space between the images */
 }
 
-
-
 .image-container {
   width: 48%; /* Slightly reduce the width of each image container to make room for equal spacing */
 }
@@ -74,7 +72,6 @@ header nav a:hover {
   display: block;
   margin: 0 auto; /* Center images within their containers */
 }
-
 
 /* Flexbox for the hero overlay with video */
 .hero-overlay {
@@ -99,7 +96,6 @@ header nav a:hover {
   z-index: 1; /* Places the overlay on top of the video */
 }
 
-
 .hero-video-container {
   position: absolute;
   top: 0;
@@ -114,6 +110,7 @@ header nav a:hover {
   height: 100%;
   object-fit: cover; /* Ensure video fills the container */
 }
+
 .hero-content {
   position: absolute;
   top: 50%;
@@ -190,15 +187,16 @@ footer {
 
 .robot-section {
   text-align: center;
-  padding: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   background-color: #ffffff; /* Optional background */
-  color: #450000; /* Matching text color */
+  color: #041e42; /* Matching text color */
 }
 
 .robot-section h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  border-bottom: 4px solid #450000; /* Creates the underline effect */
+  border-bottom: 4px solid #f2a900; /* Creates the underline effect */
   display: inline-block;
   padding-bottom: 0.5rem;
 }
@@ -213,35 +211,36 @@ footer {
 .robot-button {
   padding: 0.75rem 1.5rem;
   color: #ffffff;
-  background-color: #450000;
+  background-color: #041e42;
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: filter 1s ease; /* Smooth fade effect for background color */
 }
 
 .robot-button:hover {
-  background-color: #611919; /* Darker shade on hover */
+  filter: brightness(75%); /* Darker shade on hover */
 }
 
 .robot-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Align the items vertically */
+  gap: 2rem; /* Space between the image and the features list */
 }
 
 .robot-image {
-  width: 50%; /* Adjust the size of the image */
-  max-width: 600px;
-  height: auto;
+  max-width: 50%; /* Ensure the image doesn’t get too large */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .robot-features {
+  flex: 1; /* Allow the features list to take the remaining space */
   text-align: left;
   list-style: none;
   padding: 0;
   font-size: 1.2rem;
+  color: #041e42;
 }
 
 .robot-features li {
@@ -272,17 +271,12 @@ footer {
 }
 
 .mentoring-card {
-  background-color: #F2A900;
+  background-color: #FFFFFF;
   color: #041e42;
   padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.mentoring-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .mentoring-icon {
@@ -300,14 +294,6 @@ footer {
   font-size: 1rem;
 }
 
-/* Footer Styling */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #041e42;
-  color: #FFFFFF;
-}
-
 /* Styles for the new content section */
 .new-content-section {
   display: flex;
@@ -322,7 +308,6 @@ footer {
   background-color: #F2A900; /* Light gray background for the containers */
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Left container for the image */
@@ -357,7 +342,7 @@ footer {
   padding: 2rem; /* Increased padding for more vertical space */
   background: #041E42;
   color: #FFFFFF;
-  font-size: 0.9rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center; /* Center the content horizontally */
@@ -383,12 +368,12 @@ footer {
   display: flex;
   justify-content: flex-start; /* Align the items to the left */
   align-items: center;
-  margin-top: 2rem; /* Space between student sections */
+  margin: 1rem 1rem 0rem 1rem; /* Space between student sections */
   gap: 1rem; /* Gap between the left and right sections */
   background-color: #F2A900; /* Change background to white */
   padding: 1rem; /* Add padding around the section */
   border-radius: 10px; /* Optional: Rounds the corners of the section */
-  width: 100%; /* Ensures the section spans the full width */
+  width: 100% - 2rem; /* Ensures the section spans the full width */
 }
 
 /* Left section for the student image */
@@ -417,4 +402,69 @@ footer {
 .student-right p {
   font-size: 1rem;
   margin: 0.5rem 0; /* Add space between paragraphs */
+}
+
+.student-section-last {
+  display: flex;
+  justify-content: flex-start; /* Align the items to the left */
+  align-items: center;
+  margin: 1rem; /* Space between student sections */
+  gap: 1rem; /* Gap between the left and right sections */
+  background-color: #F2A900; /* Change background to white */
+  padding: 1rem; /* Add padding around the section */
+  border-radius: 10px; /* Optional: Rounds the corners of the section */
+  width: 100% - 2rem; /* Ensures the section spans the full width */
+}
+
+.image-link {
+  display: inline-block; /* Ensures the link behaves like an inline element */
+}
+
+.clickable-image {
+  width: 100%; /* Adjust the image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Adds rounded corners */
+  transition: filter 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.clickable-image:hover {
+  filter: brightness(80%); /* Darkens the image when hovered */
+}
+
+.sponsor-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers logos in rows with fewer than 4 */
+  gap: 20px; /* Adds space between logos */
+}
+
+.sponsor-logo {
+  flex: 1 1 calc(25% - 20px); /* Ensures up to 4 logos per row with spacing */
+  max-width: calc(25% - 20px); /* Limits each logo's width */
+  box-sizing: border-box; /* Includes padding and borders in size calculations */
+  text-align: center;
+}
+
+.sponsor-logo img {
+  max-width: 100%; /* Makes logos responsive */
+  height: auto; /* Maintains logo aspect ratio */
+  transition: filter 0.3s; /* Smooth transition for hover effect */
+}
+
+.sponsor-logo a:hover img {
+  filter: brightness(0.8); /* Darkens the logo on hover */
+}
+
+@media (max-width: 768px) {
+  .sponsor-logo {
+    flex: 1 1 calc(50% - 20px); /* Adjust to 2 logos per row on smaller screens */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-logo {
+    flex: 1 1 100%; /* One logo per row on very small screens */
+    max-width: 100%;
+  }
 }
