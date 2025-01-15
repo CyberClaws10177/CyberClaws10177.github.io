@@ -113,10 +113,10 @@ header nav a:hover {
 }
 
 .hero-content {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
   text-align: center;
   color: white;
   z-index: 2;
@@ -151,6 +151,7 @@ header nav a:hover {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 1rem;
+  margin-bottom: 6rem;
   transition: filter 0.3s ease;
 }
 
