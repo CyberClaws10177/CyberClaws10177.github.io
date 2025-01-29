@@ -15,18 +15,18 @@ body {
 /* Header Styling */
 header {
   background: #041e42;
-  padding: 0 2rem; /* Padding for spacing inside header */
-  height: 10rem; /* Increase the height of the header */
+  padding: 0 2rem;
+  height: 10rem;
   display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-  gap: 2rem; /* Space between elements */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 /* Logo Styling */
 header .logo {
-  width: 12.5rem; /* Increase the width of the logo */
-  height: auto; /* Maintain aspect ratio */
+  width: 12.5rem;
+  height: auto;
 }
 
 .divider {
@@ -57,31 +57,32 @@ header nav a:hover {
   display: flex;
   justify-content: space-around;
   background-color: #FFFFFF;
-  padding: 2rem 2rem 0; /* Adds padding on the top to lower the images */
-  gap: 1rem; /* Fixed space between the images */
+  padding: 2rem 2rem 0;
+  gap: 1rem;
 }
 
 .image-container {
-  width: 48%; /* Slightly reduce the width of each image container to make room for equal spacing */
+  width: 48%;
 }
 
 .side-by-side-image {
-  width: 100%; /* Image will fit the container width */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 20px; /* Apply rounded corners */
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
   display: block;
-  margin: 0 auto; /* Center images within their containers */
+  margin: 0 auto;
 }
 
+/* Flexbox for the hero overlay with video */
 /* Flexbox for the hero overlay with video */
 .hero-overlay {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh; /* Set the video height to 80% of the screen */
+  height: 80vh;
   width: 100%;
-  padding-top: 7rem; /* Add padding to push the video content down below the header */
+  padding-top: 7rem;
 }
 
 /* Dark overlay on top of the video */
@@ -92,8 +93,8 @@ header nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.65); /* Black with 50% transparency */
-  z-index: 1; /* Places the overlay on top of the video */
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 1;
 }
 
 .hero-video-container {
@@ -102,44 +103,45 @@ header nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Puts the video in the background */
+  z-index: 0;
 }
 
 .hero-video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure video fills the container */
+  object-fit: cover;
 }
 
 .hero-content {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
-  left: 50%; /* Horizontally center the content */
-  transform: translate(-50%, -50%); /* Center the content perfectly */
-  text-align: center; /* Center the text within the container */
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  text-align: center;
   color: white;
-  z-index: 2; /* Ensures content is on top of the overlay */
-  max-width: 700px; /* Explicitly limit the content width */
-  margin: 0 auto; /* Center horizontally within the available space */
-  line-height: 1.6; /* Add spacing between lines */
-  word-wrap: break-word; /* Ensure text wraps properly */
-  overflow-wrap: break-word; /* Added for compatibility */
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: "Roboto";
 }
 
 .hero-content h1 {
   font-size: 48px;
-  margin-bottom: 1.5rem; /* Space between heading and paragraph */
+  margin-bottom: 1.5rem;
 }
 
 .hero-content p {
   font-size: 28px;
-  margin-bottom: 1rem; /* Space between the paragraph and the subtext */
+  margin-bottom: 1rem;
 }
 
 .hero-content .subtext {
   font-size: 24px;
   font-weight: lighter;
-  margin-bottom: 1.5rem; /* Space below the subtext */
+  margin-bottom: 1.5rem;
 }
 
 .hero-content .button {
@@ -150,11 +152,12 @@ header nav a:hover {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 1rem;
-  transition: filter 0.3s ease; /* Smooth fade effect for background color */
+  margin-bottom: 6rem;
+  transition: filter 0.3s ease;
 }
 
 .hero-content .button:hover {
-  filter: brightness(50%); /* Darkens the button to 85% of its original brightness */
+  filter: brightness(50%);
 }
 
 /* Content Section below the hero */
@@ -183,6 +186,108 @@ footer {
   background: #041E42;
   color: #FFFFFF;
   font-size: 0.9rem;
+}
+.robot-section {
+  text-align: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-color: #ffffff; /* Optional background */
+  color: #041e42; /* Matching text color */
+}
+
+.robot-section .image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  gap: 0rem; /* Space between columns */
+  justify-content: center; /* Center the entire grid */
+}
+
+.robot-section .image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  gap: 1rem; /* Adjust the gap between columns */
+  justify-content: center; /* Center the entire grid */
+  width: fit-content; /* Make the grid shrink to fit its content */
+  margin: 0 auto; /* Center the grid on the page */
+}
+
+.robot-section .image-column {
+  display: flex;
+  flex-direction: column; /* Stack images vertically */
+  gap: 0.5rem; /* Space between images in the same column */
+}
+
+.clickable-image {
+  max-width: 100%; /* Ensure responsiveness */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer; /* Indicate interactivity */
+}
+
+.robot-section .image-column {
+  display: flex;
+  flex-direction: column; /* Stack images vertically */
+  gap: 1rem; /* Space between images in the same column */
+}
+
+.clickable-image {
+  max-width: 100%; /* Ensure responsiveness */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer; /* Indicate interactivity */
+}
+
+.robot-section div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.robot-section .clickable-image {
+  max-width: 300px; /* Set maximum width */
+  width: 100%; /* Allow the image to scale down proportionally */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.robot-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid #f2a900; /* Creates the underline effect */
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.robot-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.robot-button {
+  padding: 0.75rem 1.5rem;
+  color: #ffffff;
+  background-color: #041e42;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: filter 1s ease; /* Smooth fade effect for background color */
+}
+
+.robot-button:hover {
+  filter: brightness(75%); /* Darker shade on hover */
+}
+
+.robot-content {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Align the items vertically */
+  gap: 2rem; /* Space between the image and the features list */
+}
+
+.robot-image {
+  width: 300px; /* Set the fixed width */
+  height: 300px; /* Set the fixed height */
+  object-fit: cover; /* Ensures the image fits within the specified dimensions */
 }
 
 .robot-section {
@@ -280,7 +385,7 @@ footer {
 }
 
 .mentoring-icon {
-  width: 60px;
+  width: 70px;
   height: auto;
   margin-bottom: 1rem;
 }
@@ -295,6 +400,7 @@ footer {
 }
 
 /* Styles for the new content section */
+/* New Content Section */
 .new-content-section {
   display: flex;
   justify-content: space-between;
@@ -305,17 +411,18 @@ footer {
 
 .content-box {
   flex: 1;
-  background-color: #F2A900; /* Light gray background for the containers */
+  background-color: #F2A900;
   padding: 1.5rem;
   border-radius: 10px;
 }
 
-/* Left container for the image */
-.left-box {
-  min-height: 200px; /* Adjust as needed */
+.left-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-/* Right container for the paragraph */
 .right-box p {
   font-size: 32px;
   color: #041e42;
@@ -353,11 +460,11 @@ footer {
   display: flex;
   flex-wrap: wrap; /* Allows logos to wrap to the next line if necessary */
   justify-content: center; /* Centers the logos horizontally */
-  gap: 1rem; /* Space between logos */
+  gap: 2rem; /* Space between logos */
 }
 
 .footer-logos img {
-  height: 50px; /* Adjust as needed */
+  height: 60px; /* Adjust as needed */
   width: auto; /* Maintain aspect ratio */
   max-width: 100px; /* Ensures logos don't get too wide */
   object-fit: contain; /* Ensures the image scales correctly */
