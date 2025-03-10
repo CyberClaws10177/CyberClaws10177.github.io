@@ -125,7 +125,7 @@ header nav a:hover {
   line-height: 1.6;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  font-family: "Roboto";
+  font: "Roboto";
 }
 
 .hero-content h1 {
