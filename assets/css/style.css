@@ -439,13 +439,6 @@ footer {
   line-height: 1.6;
 }
 
-.left-box img {
-  width: 100%; /* Makes the image fit the full width of the box */
-  height: 100%; /* Makes the image fit the full height of the box */
-  object-fit: cover; /* Ensures the image is scaled and cropped proportionally to fit */
-  border-radius: 10px; /* Optional: Rounds the edges of the image */
-}
-
 .right-box img {
   width: 100%; /* Makes the image fit the full width of the box */
   height: 100%; /* Makes the image fit the full height of the box */
