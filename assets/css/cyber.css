@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Orbitron:wght@700;800;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --navy: #080d18;
+  --navy-dark: #03050b;
+  --gold: #f7ec3d;
+  --white: #edf7f6;
+  --ice: #a9c5c9;
+  --line: rgba(100, 245, 255, .22);
+  --cyan: #64f5ff;
+  --magenta: var(--gold);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--white);
+  color: var(--navy-dark);
+  font-family: "Share Tech Mono", monospace;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.photo-placeholder {
+  min-width: 0;
+  min-height: 180px;
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  padding: 22px;
+  border: 2px dashed var(--cyan);
+  background: repeating-linear-gradient(135deg, rgba(100,245,255,.07) 0 10px, rgba(3,5,11,.2) 10px 20px), #080d18;
+  color: var(--white);
+  text-align: center;
+  text-transform: uppercase;
+}
+.photo-placeholder strong { color: var(--cyan); font: 700 14px "Chakra Petch", sans-serif; }
+.photo-placeholder span { color: var(--ice); font-size: 10px; line-height: 1.6; }
+.photo-placeholder--yellow { border-color: var(--gold); }
+.photo-placeholder--yellow strong { color: var(--gold); }
+
+.site-header {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  border-bottom: 1px solid rgba(100,245,255,.28);
+  background: linear-gradient(90deg, rgba(3,5,11,.94), rgba(3,5,11,.55));
+  backdrop-filter: blur(8px);
+  color: white;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand img { width: 68px; height: 68px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(100,245,255,.45)); }
+.brand span { display: grid; font-family: "Chakra Petch", sans-serif; text-transform: uppercase; }
+.brand strong { font-size: 23px; letter-spacing: 0; }
+.brand small { color: var(--gold); font-size: 11px; letter-spacing: 1.5px; }
+.site-nav { display: flex; gap: clamp(18px, 2.5vw, 42px); }
+.site-nav a {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width .2s ease;
+}
+.site-nav a:hover::after, .site-nav a.active::after { width: 100%; }
+
+.hero {
+  position: relative;
+  min-height: 760px;
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--navy-dark);
+  color: white;
+}
+.hero::after { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 4px); mix-blend-mode: screen; }
+.hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.85) contrast(1.15) hue-rotate(165deg); }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3,5,11,.98) 0%, rgba(3,5,11,.88) 42%, rgba(3,5,11,.22) 100%), linear-gradient(135deg, transparent 45%, rgba(247,236,61,.16) 45%, transparent 46%); }
+.hero-grid { position: absolute; inset: 92px 0 0; opacity: .32; background-image: linear-gradient(rgba(100,245,255,.28) 1px, transparent 1px), linear-gradient(90deg, rgba(247,236,61,.18) 1px, transparent 1px); background-size: 54px 54px; clip-path: polygon(0 0, 72% 0, 48% 100%, 0 100%); }
+.hero-content { position: relative; z-index: 2; width: min(680px, 90vw); margin-left: 8vw; padding-top: 50px; }
+.hero-content::before { content: "CC-10177 // ACTIVE"; position: absolute; top: 10px; left: 0; color: var(--magenta); font-size: 9px; letter-spacing: 3px; }
+.eyebrow { margin: 0 0 18px; color: var(--gold); text-transform: uppercase; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+.hero h1 { margin: 0; font-family: "Orbitron", sans-serif; font-size: clamp(66px, 8.5vw, 128px); line-height: .85; letter-spacing: 0; text-shadow: 4px 0 0 rgba(247,236,61,.28), -3px 0 0 rgba(100,245,255,.22); }
+.hero h1 span { color: var(--cyan); -webkit-text-stroke: 1px var(--cyan); text-shadow: 0 0 8px rgba(100,245,255,.8), 0 0 28px rgba(100,245,255,.42), 4px 0 0 rgba(247,236,61,.8); }
+.hero-summary { max-width: 590px; margin: 30px 0; color: #dae3ef; font-size: 15px; line-height: 1.8; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 0 22px; border: 1px solid transparent; text-decoration: none; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: 1px; transition: transform .2s ease, background .2s ease; }
+.button:hover { transform: translateY(-2px); }
+.button-primary { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px)); background: var(--cyan); color: var(--navy-dark); box-shadow: 0 0 24px rgba(100,245,255,.32); }
+.button-secondary { border-color: var(--gold); color: white; box-shadow: inset 0 0 14px rgba(247,236,61,.08), 0 0 14px rgba(247,236,61,.12); }
+.hero-status { position: absolute; z-index: 2; right: 4vw; bottom: 30px; text-transform: uppercase; font-size: 10px; letter-spacing: 1px; }
+.hero-status span { display: inline-block; width: 8px; height: 8px; margin-right: 7px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 12px var(--cyan); }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--navy-dark); border-top: 2px solid var(--cyan); color: white; }
+.stats div { min-height: 150px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid var(--line); }
+.stats strong { color: var(--gold); font-family: "Orbitron", sans-serif; font-size: 42px; line-height: 1; text-shadow: 0 0 16px rgba(247,236,61,.35); }
+.stats span { margin-top: 10px; color: var(--ice); text-transform: uppercase; font-size: 10px; letter-spacing: 1px; }
+
+.section-shell { padding: 110px 8vw; }
+.section-heading { display: flex; align-items: end; gap: 30px; margin-bottom: 50px; }
+.section-heading .eyebrow { margin-bottom: 8px; color: #90701c; }
+.section-heading h2 { margin: 0; color: var(--navy); font-family: "Orbitron", sans-serif; font-size: clamp(58px, 7vw, 104px); line-height: .8; text-transform: uppercase; }
+.season { background-color: #eaf5f3; background-image: linear-gradient(rgba(8,13,24,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(247,236,61,.09) 1px, transparent 1px); background-size: 32px 32px; }
+.season-layout { display: grid; grid-template-columns: minmax(280px, .75fr) 1.25fr; gap: 6vw; align-items: center; }
+.season-tag { display: inline-block; margin-bottom: 20px; padding: 8px 10px; border-left: 3px solid var(--gold); background: #e8edf4; color: var(--navy); font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+.season-copy h3 { margin: 0 0 22px; font-family: "Chakra Petch", sans-serif; font-size: clamp(34px, 4vw, 58px); line-height: 1; text-transform: uppercase; }
+.season-copy p { max-width: 580px; color: #40516a; font-size: 14px; line-height: 1.8; }
+.season-copy .achievement { margin-top: 24px; padding-left: 18px; border-left: 2px solid var(--gold); }
+.text-link { display: inline-block; margin-top: 15px; color: var(--navy); font-size: 12px; font-weight: 700; text-decoration: none; text-transform: uppercase; }
+.text-link span { color: #d7990b; font-size: 18px; }
+.season-image { position: relative; }
+.season-image::before { content: ""; position: absolute; width: 70px; height: 70px; right: -15px; top: -15px; border-top: 3px solid var(--cyan); border-right: 3px solid var(--gold); filter: drop-shadow(0 0 8px var(--cyan)); }
+.season-image img { width: 100%; height: 430px; object-fit: cover; filter: contrast(1.05) saturate(.85); }
+.season-image > span { position: absolute; left: 0; bottom: 0; padding: 14px 18px; background: var(--navy); color: var(--ice); font-size: 9px; line-height: 1.6; }
+.season-image strong { color: var(--gold); font-size: 11px; }
+
+.programs { background: var(--navy); color: white; }
+.programs .section-heading h2 { color: white; }
+.program-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.program-grid article { min-height: 280px; padding: 32px; border-right: 1px solid var(--line); }
+.program-grid article:last-child { border-right: 0; }
+.program-grid article > span { color: var(--gold); font-size: 12px; }
+.program-grid h3 { margin: 70px 0 15px; font-family: "Chakra Petch", sans-serif; font-size: 24px; text-transform: uppercase; }
+.program-grid p { color: var(--ice); font-size: 13px; line-height: 1.75; }
+
+.sponsor-callout { min-height: 330px; display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 70px 8vw; background: linear-gradient(105deg, var(--gold), #bcae18 48%, var(--navy-dark) 48%, var(--navy-dark)); color: white; clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%); }
+.sponsor-callout .eyebrow { color: var(--gold); }
+.sponsor-callout h2 { max-width: 760px; margin: 0; font-family: "Orbitron", sans-serif; font-size: clamp(34px, 4vw, 58px); line-height: 1.05; text-transform: uppercase; }
+.button-light { flex-shrink: 0; background: var(--navy); color: white; }
+
+.site-footer { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; padding: 70px 8vw 35px; background: var(--navy-dark); color: white; }
+.footer-brand { display: flex; align-items: center; gap: 20px; }
+.footer-brand img { width: 105px; }
+.footer-brand p { font-family: "Chakra Petch", sans-serif; font-size: 18px; text-transform: uppercase; }
+.footer-label { color: var(--gold); text-transform: uppercase; font-size: 10px; letter-spacing: 2px; }
+.site-footer a { display: block; margin-top: 12px; color: var(--ice); font-size: 12px; text-decoration: none; overflow-wrap: anywhere; }
+.copyright { grid-column: 1 / -1; margin: 40px 0 0; padding-top: 24px; border-top: 1px solid var(--line); color: #71839b; font-size: 10px; }
+.season-image > .photo-placeholder { min-height: 430px; }
+.footer-placeholder-link { display: inline-block !important; color: var(--gold) !important; font: 700 12px "Chakra Petch", sans-serif !important; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Shared presentation for the original content pages. */
+.cyber-page { min-height: 100vh; background: var(--navy-dark); color: var(--white); }
+.cyber-page > header { position: relative; z-index: 2; height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 0 5vw; border-bottom: 1px solid var(--line); background: rgba(3,5,11,.96); color: white; }
+.cyber-page > header .logo { width: 68px; height: 68px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(100,245,255,.45)); }
+.cyber-page > header nav { display: flex; gap: clamp(18px, 2.5vw, 42px); }
+.cyber-page > header nav a { position: relative; color: white; text-decoration: none; text-transform: uppercase; font: 700 12px "Chakra Petch", sans-serif; letter-spacing: 1px; }
+.cyber-page > header nav a:hover { color: var(--gold); }
+.cyber-page .divider { height: 2px; background: linear-gradient(90deg, var(--cyan), var(--gold), transparent); box-shadow: 0 0 12px rgba(100,245,255,.35); }
+.cyber-page footer { padding: 34px 6vw 24px; border-top: 1px solid var(--line); background: #02040a; color: var(--ice); text-align: center; }
+.cyber-page footer > a { display: block; text-decoration: none; }
+.cyber-page .footer-logos { display: flex; align-items: center; justify-content: center; gap: clamp(24px, 5vw, 70px); margin: 0 auto 22px; }
+.cyber-page .footer-logos img { width: auto; max-width: 130px; max-height: 48px; object-fit: contain; filter: grayscale(1) brightness(0) invert(1); opacity: .75; transition: filter .2s ease, opacity .2s ease; }
+.cyber-page .footer-logos img:hover { filter: none; opacity: 1; }
+.cyber-page footer p { margin: 20px 0 0; color: #81919f; font-size: 11px; }
+
+.team-page .image-section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 22px 5vw; background: #050912; }
+.team-page .image-container { width: auto; min-width: 0; overflow: hidden; border: 1px solid var(--line); }
+.team-page .side-by-side-image { width: 100%; height: clamp(200px, 32vw, 420px); object-fit: cover; border-radius: 0; filter: saturate(.8) contrast(1.05); }
+.team-page .mentoring-section { padding: 72px 7vw; background: #080d18; color: var(--white); }
+.team-page .mentoring-section > h2, .robot-page .robot-section > h2 { margin: 0 0 34px; color: var(--cyan); font: 700 clamp(32px, 5vw, 64px) "Orbitron", sans-serif; text-transform: uppercase; text-shadow: 0 0 18px rgba(100,245,255,.25); }
+.team-page .mentoring-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.team-page .mentoring-card { min-height: 230px; padding: 24px; border: 1px solid var(--line); border-top: 2px solid var(--gold); background: linear-gradient(145deg, #0d1724, #060a11); }
+.team-page .mentoring-icon { width: 54px; height: 54px; object-fit: contain; }
+.team-page .mentoring-card h3, .team-page .student-right h3 { color: var(--gold); font: 700 22px "Chakra Petch", sans-serif; text-transform: uppercase; }
+.team-page .mentoring-card p, .team-page .student-right p { color: var(--ice); font-size: 13px; line-height: 1.75; }
+.team-page .student-section, .team-page .student-section-last { display: grid; grid-template-columns: minmax(150px, .34fr) 1fr; align-items: center; gap: 36px; margin: 0; padding: 36px 10vw; border-top: 1px solid var(--line); background: #050912; }
+.team-page .student-section:nth-of-type(even) { background: #080d18; }
+.team-page .student-photo { width: 160px; height: 160px; border: 1px solid var(--cyan); object-fit: cover; filter: saturate(.75); box-shadow: 7px 7px 0 rgba(100,245,255,.12); }
+.team-page .student-right h3 { margin-top: 0; }
+.team-roster { background: #060a11; }
+.team-intro { padding: 82px 8vw 48px; background: radial-gradient(ellipse at 82% 0, rgba(100,245,255,.12), transparent 44%), #070b13; }
+.team-intro h1 { margin: 0; color: var(--cyan); font: 800 clamp(42px, 7vw, 88px) "Orbitron", sans-serif; text-transform: uppercase; text-shadow: 0 0 22px rgba(100,245,255,.32); }
+.team-intro > p:last-child { max-width: 700px; color: var(--ice); font-size: 13px; line-height: 1.8; }
+.teamwide-photo { padding: 0 8vw 70px; background: #070b13; }
+.teamwide-photo .photo-placeholder { min-height: 380px; }
+.team-members { padding: 70px 8vw 100px; }
+.team-section-heading { margin-bottom: 32px; }
+.team-section-heading .eyebrow { margin-bottom: 12px; }
+.team-section-heading h2 { margin: 0; color: var(--gold); font: 700 clamp(28px, 4vw, 48px) "Orbitron", sans-serif; text-transform: uppercase; }
+.member-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.member-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(145deg, #0d1724, #060a11); }
+.member-card:nth-child(even) { border-color: rgba(247,236,61,.38); }
+.member-card .photo-placeholder { min-height: 210px; border: 0; border-bottom: 1px dashed var(--cyan); }
+.member-card:nth-child(even) .photo-placeholder { border-bottom-color: var(--gold); }
+.member-copy { padding: 18px; }
+.member-copy h3 { margin: 0 0 14px; color: var(--white); font: 700 18px "Chakra Petch", sans-serif; text-transform: uppercase; }
+.member-copy p { margin: 8px 0; color: var(--ice); font-size: 11px; line-height: 1.7; }
+.member-copy p strong { color: var(--cyan); }
+.member-copy a { color: var(--gold); overflow-wrap: anywhere; }
+.member-card:nth-child(even) .member-copy p strong { color: var(--gold); }
+
+.robot-page .robot-section { margin: 0; padding: 72px 8vw 90px; background: radial-gradient(ellipse at 80% 10%, rgba(100,245,255,.08), transparent 40%), #070b13; color: var(--white); }
+.robot-page .robot-section > h2 { display: inline-block; padding-bottom: 16px; border-bottom: 2px solid var(--gold); }
+.robot-page .robot-content { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr); align-items: center; gap: 5vw; max-width: 1100px; margin: 0 auto; }
+.robot-page .robot-image, .robot-page .robot-image-last { width: 100%; max-height: 580px; object-fit: contain; border: 1px solid var(--line); background: #03050b; }
+.robot-page .robot-features { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.robot-page .robot-features li { padding: 12px 14px; border-left: 2px solid var(--cyan); background: #0c1420; color: var(--ice); font-size: 13px; }
+.robot-page .robot-features li:nth-child(even) { border-left-color: var(--gold); }
+
+.outreach-page .robot-section { margin: 0; padding: 64px 7vw 74px; border-bottom: 1px solid var(--line); background: #070b13; color: var(--white); }
+.outreach-page .robot-section:nth-of-type(even) { background: #0a111c; }
+.outreach-page .robot-section > h2 { display: inline-block; margin: 0 0 18px; padding-bottom: 12px; border-bottom: 2px solid var(--gold); color: var(--cyan); font: 700 clamp(28px, 4vw, 48px) "Orbitron", sans-serif; text-transform: uppercase; }
+.outreach-page .container2 { padding: 8px 0 24px; background: transparent; color: var(--ice); text-align: left; }
+.outreach-page .container2 p { max-width: 780px; margin: 0; font-size: 14px; line-height: 1.8; }
+.outreach-link { display: inline-block; margin-top: 16px; color: var(--gold); font-size: 12px; font-weight: 700; text-decoration: none; text-transform: uppercase; }
+.outreach-link:hover { color: var(--cyan); }
+.outreach-page .image-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; width: 100%; margin: 0 auto; }
+.outreach-page .image-column { display: grid; grid-template-columns: 1fr; gap: 14px; min-width: 0; }
+.outreach-page .clickable-image { width: 100%; max-width: none; max-height: 340px; border: 1px solid var(--line); object-fit: cover; }
+
+.sponsors-page .robot-section { margin: 0; padding: 72px 6vw 40px; background: #070b13; color: var(--white); }
+.sponsors-page .robot-section h2 { margin: 0; color: var(--cyan); font: 700 clamp(30px, 5vw, 58px) "Orbitron", sans-serif; text-transform: uppercase; }
+.sponsors-page .sponsor-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto; padding: 24px 6vw 90px; background: #070b13; }
+.sponsors-page .sponsor-logo { min-height: 200px; display: grid; place-items: center; padding: 28px; border: 1px solid var(--line); background: linear-gradient(145deg, #0d1724, #060a11); }
+.sponsors-page .sponsor-logo a { display: grid; width: 100%; height: 100%; place-items: center; }
+.sponsors-page .sponsor-logo img { max-width: 85%; max-height: 100px; object-fit: contain; filter: grayscale(1) brightness(0) invert(1); transition: filter .2s ease, transform .2s ease; }
+.sponsors-page .sponsor-logo a:hover img { filter: none; transform: scale(1.04); }
+.sponsors-page .sponsor-logo { padding: 18px; }
+.sponsors-page .sponsor-logo .photo-placeholder { width: 100%; min-height: 180px; }
+.sponsorship-packet { padding: 54px 8vw 70px; border-top: 1px solid var(--line); background: #080d18; color: var(--white); }
+.sponsorship-packet h2 { margin: 0 0 24px; color: var(--cyan); font: 700 clamp(28px, 4vw, 46px) "Orbitron", sans-serif; text-transform: uppercase; }
+.sponsorship-packet > p:last-child { max-width: 760px; color: var(--ice); font-size: 13px; line-height: 1.8; }
+.sponsorship-packet > p:last-child a { color: var(--gold); overflow-wrap: anywhere; }
+.alumni-intro { padding: 78px 8vw 48px; background: radial-gradient(ellipse at 82% 0, rgba(100,245,255,.12), transparent 44%), #070b13; }
+.alumni-intro h1 { margin: 0; color: var(--cyan); font: 800 clamp(42px, 7vw, 88px) "Orbitron", sans-serif; text-transform: uppercase; text-shadow: 0 0 22px rgba(100,245,255,.32); }
+.alumni-intro > p:last-child { max-width: 700px; color: var(--ice); font-size: 13px; line-height: 1.8; }
+.alumni-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 20px 8vw 100px; background: #060a11; }
+.alumni-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(145deg, #0d1724, #060a11); }
+.alumni-card:nth-child(even) { border-color: rgba(247,236,61,.38); }
+.alumni-photo { min-height: 340px; border-width: 2px; }
+.alumni-copy { padding: 24px; }
+.alumni-copy h2 { margin: 0 0 20px; color: var(--white); font: 700 25px "Chakra Petch", sans-serif; text-transform: uppercase; }
+.alumni-copy p { margin: 12px 0; color: var(--ice); font-size: 12px; line-height: 1.8; }
+.alumni-copy strong { color: var(--cyan); text-transform: uppercase; }
+.alumni-card:nth-child(even) .alumni-copy strong { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .cyber-page > header { height: 78px; padding: 0 20px; }
+  .cyber-page > header .logo { width: 56px; height: 56px; }
+  .cyber-page > header nav { gap: 14px; }
+  .cyber-page > header nav a { font-size: 10px; }
+  .team-page .mentoring-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .member-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .alumni-grid { padding-right: 6vw; padding-left: 6vw; }
+  .team-intro, .team-members { padding-right: 6vw; padding-left: 6vw; }
+  .teamwide-photo { padding-right: 6vw; padding-left: 6vw; }
+  .teamwide-photo .photo-placeholder { min-height: 280px; }
+  .season-image > .photo-placeholder { min-height: 360px; }
+  .robot-page .robot-section, .outreach-page .robot-section { padding-right: 6vw; padding-left: 6vw; }
+}
+@media (max-width: 600px) {
+  .cyber-page > header { gap: 12px; padding: 0 12px; }
+  .cyber-page > header .logo { width: 42px; height: 42px; }
+  .cyber-page > header nav { gap: 10px; overflow-x: auto; }
+  .cyber-page > header nav a { white-space: nowrap; font-size: 8px; }
+  .cyber-page .footer-logos { flex-wrap: wrap; gap: 20px; }
+  .team-page .image-section { grid-template-columns: 1fr; }
+  .team-page .mentoring-section { padding: 52px 6vw; }
+  .team-page .mentoring-grid { grid-template-columns: 1fr; }
+  .member-grid { grid-template-columns: 1fr; }
+  .alumni-grid { grid-template-columns: 1fr; }
+  .alumni-photo { min-height: 280px; }
+  .team-intro { padding-top: 58px; }
+  .teamwide-photo .photo-placeholder { min-height: 220px; }
+  .member-card .photo-placeholder { min-height: 260px; }
+  .season-image > .photo-placeholder { min-height: 280px; }
+  .team-page .student-section, .team-page .student-section-last { grid-template-columns: 1fr; gap: 18px; padding: 30px 7vw; }
+  .team-page .student-photo { width: 126px; height: 126px; }
+  .robot-page .robot-content { grid-template-columns: 1fr; }
+  .outreach-page .image-grid { grid-template-columns: 1fr; }
+  .sponsors-page .sponsor-container { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .site-header { height: 78px; padding: 0 20px; }
+  .brand img { width: 56px; height: 56px; }
+  .brand span { display: none; }
+  .site-nav { gap: 15px; }
+  .site-nav a { font-size: 9px; }
+  .hero { min-height: 680px; height: 82vh; }
+  .hero-grid { top: 78px; }
+  .hero-content { margin-left: 6vw; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stats div:nth-child(2) { border-right: 0; }
+  .section-shell { padding: 80px 6vw; }
+  .season-layout { grid-template-columns: 1fr; gap: 45px; }
+  .season-image img { height: 360px; }
+  .program-grid { grid-template-columns: 1fr; }
+  .program-grid article { min-height: 220px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .program-grid h3 { margin-top: 45px; }
+  .sponsor-callout { align-items: flex-start; flex-direction: column; }
+  .site-footer { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  .site-header { align-items: center; }
+  .site-nav { gap: 10px; overflow-x: auto; }
+  .site-nav a { white-space: nowrap; }
+  .hero { min-height: 620px; }
+  .hero h1 { font-size: 72px; }
+  .hero-summary { font-size: 13px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-status { display: none; }
+  .stats div { min-height: 120px; }
+  .stats strong { font-size: 38px; }
+  .section-heading { display: block; }
+  .season-image img { height: 280px; }
+  .sponsor-callout { padding: 60px 6vw; }
+  .site-footer { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: auto; }
+}

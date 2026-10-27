@@ -2,67 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport">
-  <title>Team CyberClaws10177</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CyberClaws FRC Team 10177 builds competitive robots, serves the Miami STEM community, and represents Belen Jesuit Preparatory School.">
+  <title>CyberClaws | FRC Team 10177</title>
+  <link rel="stylesheet" href="assets/css/cyber.css">
 </head>
 <body>
-  <header>
-    
-    <img src="assets/images/CYBERCLAWS 10177 LOGO TRANSPARENT.png" alt="CyberClaws Logo" class="logo">
-    <nav>
-      <a class="" href="index.html">Home</a>
-      <a href="mentoring.html">About Us</a>
-      <a href="robot.html">Our Robot</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CyberClaws home">
+      <img src="assets/images/CYBERCLAWS 10177 LOGO TRANSPARENT.png" alt="CyberClaws logo">
+      <span><strong>CYBERCLAWS</strong><small>FRC TEAM 10177</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="mentoring.html">Meet the Team</a>
+      <a href="alumni.html">Alumni</a>
+      <a href="robot.html">Robot</a>
       <a href="outreach.html">Outreach</a>
       <a href="sponsors.html">Sponsors</a>
     </nav>
-  </header>  
-  
-  <div class="divider"></div>
+  </header>
 
-  <div class="hero-overlay">
-    <div class="hero-video-container">
-      <video autoplay muted loop class="hero-video">
+  <main>
+    <section class="hero">
+      <video autoplay muted loop playsinline aria-hidden="true">
         <source src="assets/videos/Robotics video.mp4" type="video/mp4">
       </video>
-    </div>
-    <div class="hero-content">
-      <h1>FIRST Robotics Competition FIRST Tech Challenge</h1>
-      <p>The OFFICIAL website of FRC Team 10177, FTC Team 19442, and FTC Team 20723</p>
-      <p class="subtext">Proudly representing Belen Jesuit Preparatory School</p>
-      <a href="assets/PDF/sponsorship-packet.pdf" class="button">Download Sponsorship Packet</a>
-    </div>
-  </div>  
-
-  <div class="container2">
-    <h2>What's New This Month</h2>
-    <!-- Two New Containers -->
-    <div class="new-content-section">
-      <!-- Left container for the image -->
-      <div class="content-box left-box">
-        <img src="assets/images/CYBERCLAWS 10177 LOGO TRANSPARENT.png" alt="FTC Competition Image">
+      <div class="hero-grid"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Miami, Florida // 2026 preseason</p>
+        <h1>BUILD.<br><span>COMPETE.</span><br>INSPIRE.</h1>
+        <p class="hero-summary">We are CyberClaws 10177, a student-led FIRST Robotics team engineering the future from Belen Jesuit Preparatory School.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="sponsors.html#sponsorship-packet">Support the team</a>
+          <a class="button button-secondary" href="robot.html">Explore the robot</a>
+        </div>
       </div>
-      <!-- Right container for the paragraph -->
-      <div class="content-box right-box">
-        <p>After competing in the Tallahassee Regional FRC Competition, our 2024-2025 Season is unfortunately over. We can't wait to see you all next year!</p>
-      </div>
-    </div>
-  </div>
+      <div class="hero-status"><span></span> Systems online</div>
+    </section>
 
-  <footer>
-    <a href="sponsors.html">
-    <div class="footer-logos">
-      <img src="assets/images/Sponsors/Haas_Automation_Logo.png" alt="Sponsor 1 Logo">
-      <img src="assets/images/Sponsors/Motorola.png" alt="Sponsor 2 Logo">
-      <img src="assets/images/Sponsors/MWL Engineering.png" alt="Sponsor 3 Logo">
-      <img src="assets/images/Sponsors/NASA.png" alt="Sponsor 4 Logo">
-      <!-- Add more logos as needed -->
+    <section class="stats" aria-label="Team statistics">
+      <div><strong>10177</strong><span>FRC team</span></div>
+      <div><strong>25</strong><span>student builders</span></div>
+      <div><strong>1</strong><span>robot. one mission.</span></div>
+      <div><strong>1st</strong><span>Raiders Revenge preseason</span></div>
+    </section>
+
+    <section class="season section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Preseason mission</p>
+        <h2>REBUILT</h2>
+      </div>
+      <div class="season-layout">
+        <div class="season-copy">
+          <span class="season-tag">2026 FRC PRESEASON</span>
+          <h3>Ready for January.</h3>
+          <p>We are preparing for the next season by strengthening team organization, building skills, and making connections. The next competition season begins in January with new FIRST rules and standards.</p>
+          <p class="achievement"><strong>Preseason highlight:</strong> Raiders Revenge champions, October 2026.</p>
+          <a class="text-link" href="robot.html">See the season robot <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="season-image">
+          <div class="photo-placeholder photo-placeholder--yellow" role="img" aria-label="Team action photo placeholder">
+            <strong>Team action photo</strong>
+            <span>Placeholder for future reference: add a season build or competition photo.</span>
+          </div>
+          <span>FIELD STATUS<br><strong>COMPETITION READY</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">The team</p>
+        <h2>More than machines</h2>
+      </div>
+      <div class="program-grid">
+        <article><span>01</span><h3>Engineering</h3><p>Mechanical design, CAD, machining, electrical systems, programming, and autonomous development.</p></article>
+        <article><span>02</span><h3>Competition</h3><p>We test under pressure, iterate as a team, and represent Belen Jesuit with grit and sportsmanship.</p></article>
+        <article><span>03</span><h3>Community</h3><p>Our outreach connects Miami students with robotics, engineering, and opportunities in STEM.</p></article>
+      </div>
+    </section>
+
+    <section class="sponsor-callout">
+      <div>
+        <p class="eyebrow">Power the next build</p>
+        <h2>Help us compete, create, and give back.</h2>
+      </div>
+      <a class="button button-light" href="sponsors.html">Partner with CyberClaws</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="assets/images/CYBERCLAWS 10177 LOGO TRANSPARENT.png" alt="CyberClaws logo">
+      <p>Student innovation.<br>Miami made.</p>
     </div>
-  </a>
-    <p>© 2024 CyberClaws - Team 10177. All rights reserved.</p>
+    <div>
+      <p class="footer-label">Contact</p>
+      <a href="mailto:pperez@belenjesuit.org">pperez@belenjesuit.org</a>
+      <a href="mailto:jreyes29@belenwolverines.org">jreyes29@belenwolverines.org</a>
+    </div>
+    <div>
+      <p class="footer-label">Belen Jesuit</p>
+      <a href="https://www.belenjesuit.org" target="_blank" rel="noopener">Official school website</a>
+      <a href="sponsors.html">Our sponsors</a>
+    </div>
+    <p class="copyright">© 2026 CyberClaws FRC 10177</p>
   </footer>
-  
 </body>
 </html>
